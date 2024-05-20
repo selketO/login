@@ -12,13 +12,13 @@
         <button onclick="signIn()" class="login-btn">Iniciar sesión</button>
     </div>
 </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+<script>
+document.addEventListener('DOMContentLoaded', function() {
     const msalConfig = {
         auth: {
             clientId: "18b8f381-f92f-443e-a20b-bf239a6c7383",
             authority: "https://login.microsoftonline.com/016f1fbb-81bd-443c-b692-6792805d21ec",
-            redirectUri: "https://login-teal-three.vercel.app/"
+            redirectUri: window.location.origin + "/menu.html"
         }
     };
 
@@ -37,7 +37,7 @@
     function handleResponse(response) {
         if (response !== null) {
             localStorage.setItem("msalIdToken", response.idToken);
-            localStorage.setItem("username", response.account.name);
+            localStorage.setItem("username", response.account.username);
             window.location.href = 'menu.html';
         } else {
             console.log("No user data received.");
@@ -49,7 +49,6 @@
         localStorage.clear();
     };
 });
-
-    </script>
+</script>
 </body>
 </html>
