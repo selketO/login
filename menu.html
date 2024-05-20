@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu.css"> <!-- Link to a CSS file for styling -->
+    <title>BCL Management</title>
+</head>
+<body>
+    <div class="welcome-message">
+        <h1>Hola <span id="username"></span>, bienvenido a BCL Management</h1>
+    </div>
+
+    <nav class="main-menu">
+        <ul>
+            <li><a href="https://calculadora-99jf.onrender.com"><img src="img/Condiciones.png" alt="Calculadora"><span>Calculadora</span></a></li>
+            <li><a href="https://formulariov3.onrender.com/"><img src="img/solped.png" alt="SOLPED"><span>SOLPED</span></a></li>
+            <li><a href="https://formulariov3.onrender.com/rubro.html"><img src="img/FormRubro.png" alt="Rubros"><span>Rubros</span></a></li>
+            <li><a href="https://formulariov3.onrender.com/Reporte.html"><img src="img/ReporteRubros.png" alt="Reporte de Rubros"><span>Reporte de Rubros</span></a></li>
+            <li><a href="https://condiciones.onrender.com/formulario"><img src="img/Formulario_condiciones.png" alt="Formulario"><span>Formulario</span></a></li>
+        </ul>
+    </nav>
+
+    <script src="https://alcdn.msauth.net/browser/2.13.1/js/msal-browser.js" crossorigin="anonymous" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Verifica si el usuario está autenticado
+    if (!localStorage.getItem("msalIdToken")) {
+        redirectToLogin();
+    } else {
+        updateUsernameDisplay();
+    }
+
+    function updateUsernameDisplay() {
+        const username = localStorage.getItem("username");
+        if (username) {
+            document.getElementById('username').innerText = username;
+        }
+    }
+
+    function redirectToLogin() {
+        window.location.href = 'index.html';
+    }
+});
+
+    </script>
+</body>
+</html>

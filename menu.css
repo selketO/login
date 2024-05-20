@@ -1,0 +1,90 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.welcome-message {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin: 20px auto;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+.main-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main-menu li {
+    background-color: transparent;
+    border-radius: 8px;
+    margin: 10px;
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    cursor: pointer; /* Indica que es interactivo */
+}
+
+.main-menu li a {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: white; /* Preparación para el texto */
+}
+
+.main-menu li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease; /* Suaviza la transición de opacidad */
+}
+
+.main-menu li a span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 123, 255, 0.8); /* Capa semitransparente azul */
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 16px;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.3s ease; /* Suaviza la transición de opacidad */
+}
+
+.main-menu li:hover img, .main-menu li:focus img {
+    opacity: 0.6; /* Oscurece la imagen */
+}
+
+.main-menu li:hover span, .main-menu li:focus span {
+    opacity: 1; /* Muestra el texto */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-menu ul {
+        flex-direction: column;
+    }
+
+    .main-menu li {
+        width: 80%;
+        margin: 10px auto;
+    }
+}

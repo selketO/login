@@ -1,0 +1,48 @@
+/* index.css */
+body {
+    background-image: url('img/Fondo2.png'); /* Asegúrate de que la ruta al archivo de imagen es correcta */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.login-container {
+    background: transparent; /* Aumentamos la transparencia */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    padding: 60px 80px; /* Aumentamos el padding para un recuadro más grande */
+    border-radius: 20px;
+    box-shadow: 12px 12px 24px rgba(115, 114, 114, 0.2); /* Sombra más fuerte para un efecto más nítido */
+    width: auto;
+    max-width: 500px; /* Aumento del máximo ancho */
+}
+
+h1 {
+    color: #333;
+    font-size: 32px; /* Tamaño de fuente más grande */
+    font-weight: bold;
+    margin-bottom: 16px; /* Ajuste del espacio debajo del título */
+    text-align: center; /* Alineación central del texto */
+}
+
+.login-btn {
+    background-color: #233a72;
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transición suave para el efecto hover */
+}
+
+.login-btn:hover {
+    background-color: #003366;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Sombra más intensa para hover */
+}

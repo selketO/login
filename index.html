@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión con Microsoft</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://alcdn.msauth.net/browser/2.13.1/js/msal-browser.js" crossorigin="anonymous" defer></script>
+</head>
+<body>
+<div class="background-container">
+    <div class="login-container">
+        <button onclick="signIn()" class="login-btn">Iniciar sesión</button>
+    </div>
+</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const msalConfig = {
+        auth: {
+            clientId: "18b8f381-f92f-443e-a20b-bf239a6c7383",
+            authority: "https://login.microsoftonline.com/016f1fbb-81bd-443c-b692-6792805d21ec",
+            redirectUri: "https://100d-189-203-106-88.ngrok-free.app"
+        }
+    };
+
+    const myMSALObj = new msal.PublicClientApplication(msalConfig);
+    const loginRequest = {
+        scopes: ["User.Read"]
+    };
+
+    window.signIn = function () {
+        myMSALObj.loginPopup(loginRequest).then(handleResponse).catch(function(error) {
+            console.log("Error during login:", error);
+            alert('Login failed, please try again.');
+        });
+    };
+
+    function handleResponse(response) {
+        if (response !== null) {
+            localStorage.setItem("msalIdToken", response.idToken);
+            localStorage.setItem("username", response.account.name);
+            window.location.href = 'menu.html';
+        } else {
+            console.log("No user data received.");
+        }
+    }
+
+    window.signOut = function () {
+        myMSALObj.logout();
+        localStorage.clear();
+    };
+});
+
+    </script>
+</body>
+</html>
