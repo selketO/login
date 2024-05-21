@@ -9,47 +9,49 @@
 <body>
 <div class="background-container">
     <div class="login-container">
-        <button onclick="signIn()" class="login-btn">Iniciar sesión</button>
+        <button onclick="signIn()" class="login-btn">
+            <img src="https://img.icons8.com/?size=100&id=102497&format=png&color=ffffff" alt="Microsoft Icon">
+            Iniciar sesión
+        </button>
     </div>
 </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const msalConfig = {
-        auth: {
-            clientId: "18b8f381-f92f-443e-a20b-bf239a6c7383",
-            authority: "https://login.microsoftonline.com/016f1fbb-81bd-443c-b692-6792805d21ec",
-            redirectUri: "https://100d-189-203-106-88.ngrok-free.app"
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const msalConfig = {
+            auth: {
+                clientId: "18b8f381-f92f-443e-a20b-bf239a6c7383",
+                authority: "https://login.microsoftonline.com/016f1fbb-81bd-443c-b692-6792805d21ec",
+                redirectUri: "https://login-teal-three.vercel.app/"
+            }
+        };
+
+        const myMSALObj = new msal.PublicClientApplication(msalConfig);
+        const loginRequest = {
+            scopes: ["User.Read"]
+        };
+
+        window.signIn = function () {
+            myMSALObj.loginPopup(loginRequest).then(handleResponse).catch(function(error) {
+                console.log("Error during login:", error);
+                alert('Login failed, please try again.');
+            });
+        };
+
+        function handleResponse(response) {
+            if (response !== null) {
+                localStorage.setItem("msalIdToken", response.idToken);
+                localStorage.setItem("username", response.account.username);
+                window.location.href = 'menu.html';
+            } else {
+                console.log("No user data received.");
+            }
         }
-    };
 
-    const myMSALObj = new msal.PublicClientApplication(msalConfig);
-    const loginRequest = {
-        scopes: ["User.Read"]
-    };
-
-    window.signIn = function () {
-        myMSALObj.loginPopup(loginRequest).then(handleResponse).catch(function(error) {
-            console.log("Error during login:", error);
-            alert('Login failed, please try again.');
-        });
-    };
-
-    function handleResponse(response) {
-        if (response !== null) {
-            localStorage.setItem("msalIdToken", response.idToken);
-            localStorage.setItem("username", response.account.name);
-            window.location.href = 'menu.html';
-        } else {
-            console.log("No user data received.");
-        }
-    }
-
-    window.signOut = function () {
-        myMSALObj.logout();
-        localStorage.clear();
-    };
-});
-
-    </script>
+        window.signOut = function () {
+            myMSALObj.logout();
+            localStorage.clear();
+        };
+    });
+</script>
 </body>
 </html>
