@@ -6,162 +6,6 @@
     <title>Menú Principal</title>
     <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://alcdn.msauth.net/browser/2.13.1/js/msal-browser.js" crossorigin="anonymous" defer></script>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .welcome-message {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            margin: 20px auto;
-            width: 90%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: #333;
-            font-size: 24px;
-        }
-
-        .content-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start; /* Align items at the top */
-            width: 90%;
-        }
-
-        .buttons-container {
-            display: flex;
-            flex-direction: column;
-            margin-right: 20px;
-        }
-
-        .icon-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 200px;
-            height: 200px;
-            margin-bottom: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            font-size: 20px;
-        }
-
-        .icon-button i {
-            font-size: 30px;
-            margin-right: 10px;
-        }
-
-        .icon-button:hover {
-            background-color: #0056b3;
-        }
-
-        .main-menu {
-            flex-grow: 1;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            display: none;
-            align-self: center; /* Center the menu vertically */
-        }
-
-        .main-menu ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .main-menu li {
-            background-color: transparent;
-            border-radius: 8px;
-            margin: 10px;
-            width: 300px;
-            height: 250px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-        }
-
-        .main-menu li a {
-            display: block;
-            height: 100%;
-            text-decoration: none;
-            color: white;
-        }
-
-        .main-menu li img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: opacity 0.3s ease;
-        }
-
-        .main-menu li a span {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(0, 123, 255, 0.8);
-            color: white;
-            text-align: center;
-            padding: 8px 0;
-            font-size: 16px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .main-menu li:hover img, .main-menu li:focus img {
-            opacity: 0.6;
-        }
-
-        .main-menu li:hover span, .main-menu li:focus span {
-            opacity: 1;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .content-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .buttons-container {
-                flex-direction: row;
-                margin-bottom: 20px;
-            }
-
-            .icon-button {
-                width: 100px;
-                height: 100px;
-                margin-right: 10px;
-            }
-
-            .main-menu {
-                width: 100%;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="welcome-message">
@@ -182,55 +26,69 @@
 
         <nav class="main-menu" id="reportes-menu">
             <ul>
-                <li><a href="https://formulariov3.onrender.com/rubro.html"><img src="img/FormRubro.png" alt="Rubros"><span>Rubros</span></a></li>
-                <li><a href="https://formulariov3.onrender.com/Reporte.html"><img src="img/ReporteRubros.png" alt="Reporte de Rubros"><span>Reporte de Rubros</span></a></li>
+                <li><a id="linkRubro" href="#"><img src="img/FormRubro.png" alt="Rubros"><span>Rubros</span></a></li>
+                <li><a id="linkReporteRubros" href="#"><img src="img/ReporteRubros.png" alt="Reporte de Rubros"><span>Reporte de Rubros</span></a></li>
             </ul>
         </nav>
 
         <nav class="main-menu" id="herramientas-menu">
             <ul>
-                <li><a href="https://condiciones.onrender.com"><img src="img/Condiciones.png" alt="Calculadora"><span>Calculadora</span></a></li>
-                <li><a href="https://formulariov3.onrender.com/"><img src="img/solped.png" alt="SOLPED"><span>SOLPED</span></a></li>
-                <li><a href="https://condiciones.onrender.com/formulario"><img src="img/Formulario_condiciones.png" alt="Formulario"><span>Formulario</span></a></li>
+                <li><a id="linkCalculadora" href="#"><img src="img/Condiciones.png" alt="Calculadora"><span>Calculadora</span></a></li
+                <li><a id="linkSolped" href="#"><img src="img/solped.png" alt="SOLPED"><span>SOLPED</span></a></li>
+                <li><a id="linkFormularioCondiciones" href="#"><img src="img/Formulario_condiciones.png" alt="Formulario"><span>Formulario</span></a></li>
             </ul>
         </nav>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            if (!localStorage.getItem("msalIdToken")) {
+            const authToken = sessionStorage.getItem("authToken");
+            if (!authToken) {
                 redirectToLogin();
             } else {
                 updateUsernameDisplay();
+                updateLinks(authToken);
             }
+        });
 
-            function updateUsernameDisplay() {
-                const username = localStorage.getItem("username");
-                if (username) {
-                    document.getElementById('username').innerText = username;
-                }
-            }
+        function updateUsernameDisplay() {
+    const name = sessionStorage.getItem("name");
+    if (name) {
+        document.getElementById('username').innerText = name;
+    } else {
+        console.error("No name found in sessionStorage");
+        redirectToLogin();
+    }
+}
 
-            function redirectToLogin() {
-                window.location.href = 'index.html';
-            }
 
-            const reportesBtn = document.getElementById('reportes-btn');
-            const herramientasBtn = document.getElementById('herramientas-btn');
-            const reportesMenu = document.getElementById('reportes-menu');
-            const herramientasMenu = document.getElementById('herramientas-menu');
+        function redirectToLogin() {
+            window.location.href = 'index.html';
+        }
 
-            reportesBtn.addEventListener('click', function() {
-                const isHidden = reportesMenu.style.display === 'none' || reportesMenu.style.display === '';
-                reportesMenu.style.display = isHidden ? 'block' : 'none';
-                herramientasMenu.style.display = 'none';
-            });
+        function updateLinks(token) {
+            document.getElementById('linkRubro').href = `https://formulariov3.onrender.com/rubro.html?token=${token}`;
+            document.getElementById('linkReporteRubros').href = `https://formulariov3.onrender.com/Reporte.html?token=${token}`;
+            document.getElementById('linkCalculadora').href = `https://condiciones.onrender.com?token=${token}`;
+            document.getElementById('linkSolped').href = `https://formulariov3.onrender.com/?token=${token}`;
+            document.getElementById('linkFormularioCondiciones').href = `https://condiciones.onrender.com/formulario?token=${token}`;
+        }
 
-            herramientasBtn.addEventListener('click', function() {
-                const isHidden = herramientasMenu.style.display === 'none' || herramientasMenu.style.display === '';
-                herramientasMenu.style.display = isHidden ? 'block' : 'none';
-                reportesMenu.style.display = 'none';
-            });
+        const reportesBtn = document.getElementById('reportes-btn');
+        const herramientasBtn = document.getElementById('herramientas-btn');
+        const reportesMenu = document.getElementById('reportes-menu');
+        const herramientasMenu = document.getElementById('herramientas-menu');
+
+        reportesBtn.addEventListener('click', function() {
+            const isHidden = reportesMenu.style.display === 'none' || reportesMenu.style.display === '';
+            reportesMenu.style.display = isHidden ? 'block' : 'none';
+            herramientasMenu.style.display = 'none';
+        });
+
+        herramientasBtn.addEventListener('click', function() {
+            const isHidden = herramientasMenu.style.display === 'none' || herramientasMenu.style.display === '';
+            herramientasMenu.style.display = isHidden ? 'block' : 'none';
+            reportesMenu.style.display = 'none';
         });
     </script>
 </body>

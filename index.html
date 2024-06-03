@@ -39,13 +39,54 @@
 
         function handleResponse(response) {
             if (response !== null) {
-                localStorage.setItem("msalIdToken", response.idToken);
-                localStorage.setItem("username", response.account.username);
-                window.location.href = 'menu.html';
+                fetch('http://localhost:3000/generate-token', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        idToken: response.idToken,
+                        userData: {
+                            username: response.account.username,
+                            name: response.account.name
+                        }
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+    sessionStorage.setItem("authToken", data.jwtToken);
+    const userDetails = parseJwt(data.jwtToken);
+    if (userDetails) {
+        sessionStorage.setItem("name", userDetails.name);
+        sessionStorage.setItem("username", userDetails.username);  // Guarda el username también si es necesario
+        window.location.href = 'menu.html';
+    } else {
+        throw new Error("Invalid token data");
+    }
+})
+                .catch(error => {
+                    console.log('Error al procesar el login:', error);
+                    alert('Login failed, please try again.');
+                });
             } else {
                 console.log("No user data received.");
             }
         }
+
+        function parseJwt(token) {
+    try {
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+        return JSON.parse(jsonPayload);
+    } catch (e) {
+        console.error("Error parsing JWT: ", e);
+        return null;
+    }
+}
+
 
         window.signOut = function () {
             myMSALObj.logout();
