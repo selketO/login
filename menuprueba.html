@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCL Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="banner"> <img class="logo" src="/img/BCL MGM.png" alt="" height="60px"></div>
+    <div class="welcome-message">Hola, Usuario, Bienvenido a BCL Management</div>
+  </header>
+  <div class="main-content">
+    <aside class="side-panel">
+      <div class="info-content">
+        <div class="info-item button-like" id="reportes-btn">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/65c2ac75a847c2396f22daf918b61247a328686459e3f8180de77431fe4992fd?apiKey=04079884f12548c89e5c02ec84d3a617" class="img" alt="Reportes"/>
+          <div class="info-title menu">Reportes</div>
+        </div>
+        <div class="info-item button-like" id="herramientas-btn">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c07b417c42c9954eacf8e1bd0465f7edeafb31f5ad3919206ae02df6e33a431d?apiKey=04079884f12548c89e5c02ec84d3a617" class="img" alt="Herramientas"/>
+          <div class="info-title menu">Herramientas</div>
+        </div>
+      </div>
+    </aside>
+    <section class="additional-content" id="reportes-menu">
+        <div class="additional-wrapper">
+          <aside class="stats-panel">
+            <div class="stats-content">
+              <div class="icon-container">
+                <img src="/img/reportegastos-Photoroom.png" alt="Rubro">
+              </div>
+              <div class="info-title menus">Reporte de gastos</div>
+              <div class="stats-subtitle">Aqui podras ver los gastos de tu area, podrás ver tanto lo presupuestado y el gasto real junto con una comparativa de las mismas</div>
+              <div class="info-line"></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    <section class="additional-content" id="herramientas-menu">
+      <div class="additional-wrapper">
+        <aside class="stats-panel">
+          <div class="stats-content">
+            <div class="icon-container">
+              <img src="/img/condiciones_comerciales-Photoroom (3).png" alt="Rubro">
+            </div>
+            <div class="info-title menus">Condiciones comerciales</div>
+            <div class="stats-subtitle">Explicacion breve</div>
+            <div class="info-line"></div>
+          </div>
+        </aside>
+        <aside class="stats-panel">
+          <div class="stats-content">
+            <div class="icon-container">
+              <img src="/img/reasignacion de saldos-Photoroom.png" alt="Rubro">
+            </div>
+            <div class="info-title menus">Reasignacion de gastos</div>
+            <div class="stats-subtitle">Explicacion breve</div>
+            <div class="info-line"></div>
+          </div>
+        </aside>
+        <aside class="stats-panel">
+          <div class="stats-content">
+            <div class="icon-container">
+              <img src="/img/solped-Photoroom.png" alt="Rubro">
+            </div>
+            <div class="info-title menus">Solped</div>
+            <div class="stats-subtitle">Explicacion breve</div>
+            <div class="info-line"></div>
+          </div>
+        </aside>
+        <aside class="stats-panel">
+          <div class="stats-content">
+            <div class="icon-container">
+              <img src="/img/descuentosadicionales-Photoroom (1).png" alt="Rubro">
+            </div>
+            <div class="info-title menus">Descuentos adicionales</div>
+            <div class="stats-subtitle">Explicacion breve</div>
+            <div class="info-line"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </div>
+</body>
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+            const authToken = sessionStorage.getItem("authToken");
+            if (!authToken) {
+                redirectToLogin();
+            } else {
+                updateUsernameDisplay();
+                updateLinks(authToken);
+            }
+        });
+
+  function updateUsernameDisplay() {
+    const name = sessionStorage.getItem("name");
+    if (name) {
+        document.getElementById('username').innerText = name;
+    } else {
+        console.error("No name found in sessionStorage");
+        redirectToLogin();
+    }
+}
+
+  // function redirectToLogin() {
+  //     window.location.href = 'index.html'; // Redirige al usuario a la página de inicio de sesión
+  // }
+
+  function updateLinks(token) {
+            document.getElementById('linkRubro').href = `http://localhost:3001/rubro.html?token=${token}`;
+            document.getElementById('linkReporteRubros').href = `http://localhost:3001/Reporte.html?token=${token}`;
+            document.getElementById('linkCalculadora').href = `https://condiciones.onrender.com?token=${token}`;
+            document.getElementById('linkSolped').href = `http://localhost:3001/?token=${token}`;
+            document.getElementById('linkFormularioCondiciones').href = `https://condiciones.onrender.com/formulario?token=${token}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+  const reportesBtn = document.getElementById('reportes-btn');
+  const herramientasBtn = document.getElementById('herramientas-btn');
+  const reportesMenu = document.getElementById('reportes-menu');
+  const herramientasMenu = document.getElementById('herramientas-menu');
+
+  reportesBtn.addEventListener('click', function() {
+    reportesMenu.style.display = 'block'; // Muestra solo el menú de reportes
+    herramientasMenu.style.display = 'none'; // Oculta el menú de herramientas
+  });
+
+  herramientasBtn.addEventListener('click', function() {
+    herramientasMenu.style.display = 'block'; // Muestra todos los paneles de herramientas
+    reportesMenu.style.display = 'none'; // Oculta el menú de reportes
+  });
+});
+
+    </script>
+</body>
+</html>

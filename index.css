@@ -1,44 +1,98 @@
 /* index.css */
-body, html {
+/* html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-image: url('img/Fondo2.png'); /* Asegúrate de que la ruta al archivo de imagen es correcta */
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+    /* background-color: #003366; */
+/* } */
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
 }
 
-.background-container {
+.fondo {
+    background-image: url('Imagen\ 1.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 45vh;
+    width: 100%;
+}
+
+
+.logo-container {
+    margin-bottom: 0; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: start;
+    align-items: center;
+    margin-top: 180px;
+    margin-left: 60px;
+
+}
+
+
+/* body{
     display: flex;
     justify-content: center;
-    align-items: center;/* Fondo blanco para el contenedor */
+    align-items: center;
+} */
+.background-container {
+    background: #ffffff69; 
+    backdrop-filter: blur(10px); 
+    padding: 50px 50px; 
+    width: auto;
+    text-align: center; 
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    height: 43vh; 
+    justify-content: center; 
 }
+
+/* @media (max-width: 1050px) {
+    .background-container {
+        height: auto; 
+        padding: 20px; 
+    }
+} */
+
+
+/* .logo-container {
+    margin-bottom: 0; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: start;
+    align-items: center;
+} */
+
+
+
 
 .login-container {
-    background: #ffffff69; /* Aumentamos la transparencia */
-    backdrop-filter: blur(10px); /* Efecto de desenfoque */
-    padding: 60px 80px; /* Aumentamos el padding para un recuadro más grande */
-    border-radius: 20px;
-    box-shadow: 12px 12px 24px rgba(115, 114, 114, 0.2); /* Sombra más fuerte para un efecto más nítido */
-    width: auto;
-    max-width: 500px; /* Aumento del máximo ancho */
-    text-align: center; /* Alineación central del contenido */
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
 
-h1 {
-    color: #333;
-    font-size: 32px; /* Tamaño de fuente más grande */
-    font-weight: bold;
-    margin-bottom: 16px; /* Ajuste del espacio debajo del título */
-    text-align: center; /* Alineación central del texto */
 }
 
 .login-btn {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     background-color: #233a72;
@@ -49,8 +103,8 @@ h1 {
     cursor: pointer;
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    transition: background-color 0.3s, box-shadow 0.3s; /* Transición suave para el efecto hover */
+    width: 50%;
+    transition: background-color 0.3s, box-shadow 0.3s; 
 }
 
 .login-btn img {
@@ -61,5 +115,90 @@ h1 {
 
 .login-btn:hover {
     background-color: #003366;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Sombra más intensa para hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+}
+
+.text-container {
+    font-family: "Roboto", sans-serif;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: #141414;
+    text-align: justify; 
+    font-size: 16px;
+    font-style: roboto; 
+    font-weight: 450;
+    width: 70%;
+
+}
+
+
+
+/* .logo {
+    margin-top: -90px;
+} */
+
+
+h1 {
+    font-style: century gothic;
+    font-weight: 300;
+    color: #979797;
+    font-size: 60px; 
+    margin-bottom: 5px; 
+    text-align: left; 
+
+}
+
+.text-container > p:first-of-type {
+    font-style: century gothic;
+    color: #979797;
+    font-size: 45px;
+    margin-bottom: 50px; 
+    margin-top: 5px;
+    font-weight: 300;
+
+}
+
+h2 {
+    font-family: "Roboto", sans-serif;
+    color: #00B050;
+    font-size: 23px; 
+    font-weight: bold;
+    margin-top: 50px;
+    text-align: left; 
+}
+p{
+    font-family: "Roboto", sans-serif;
+    color: #979797;
+    font-size: 27px;
+    font-weight: 300;
+    text-align: justify; 
+
+}
+
+.letraNegra {
+    color: #4f4f4f;
+    font-weight: 300;
+}
+
+.letraAzul {
+    color: #062059;
+    font-weight: 400;
+}
+
+.letraAzul2 {
+    color: #2764a1;
+}
+
+.background-container.text-container {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.bclLogo {
+    position: absolute;
+    top: 20px; /* Ajusta este valor según sea necesario */
+    left: 20px; /* Ajusta este valor según sea necesario */
+    z-index: 10; /* Asegúrate de que esté por encima de otros elementos */
 }

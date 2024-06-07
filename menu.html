@@ -26,16 +26,16 @@
 
         <nav class="main-menu" id="reportes-menu">
             <ul>
-                <li><a id="linkRubro" href="#"><img src="img/FormRubro.png" alt="Rubros"><span>Rubros</span></a></li>
-                <li><a id="linkReporteRubros" href="#"><img src="img/ReporteRubros.png" alt="Reporte de Rubros"><span>Reporte de Rubros</span></a></li>
+                <li><a id="linkRubro" href="#"><img src="img/reasignacion de saldos-Photoroom.png" alt="Rubros"><span>Reasignacion de saldos</span></a></li>
+                <li><a id="linkReporteRubros" href="#"><img src="img/reportegastos-Photoroom.png" alt="Reporte de Rubros"><span>Reporte de gastos</span></a></li>
             </ul>
         </nav>
 
         <nav class="main-menu" id="herramientas-menu">
             <ul>
-                <li><a id="linkCalculadora" href="#"><img src="img/Condiciones.png" alt="Calculadora"><span>Calculadora</span></a></li
-                <li><a id="linkSolped" href="#"><img src="img/solped.png" alt="SOLPED"><span>SOLPED</span></a></li>
-                <li><a id="linkFormularioCondiciones" href="#"><img src="img/Formulario_condiciones.png" alt="Formulario"><span>Formulario</span></a></li>
+                <li><a id="linkCalculadora" href="#"><img src="img/condiciones_comerciales-Photoroom (3).png" alt="Calculadora"><span>Calculadora de condiciones</span></a></li
+                <li><a id="linkSolped" href="#"><img src="img/solped-Photoroom.png" alt="SOLPED"><span>SOLPED</span></a></li>
+                <li><a id="linkFormularioCondiciones" href="#"><img src="img/descuentosadicionales-Photoroom (1).png" alt="Formulario"><span>Descuentos adicionales</span></a></li>
             </ul>
         </nav>
     </div>
@@ -67,10 +67,10 @@
         }
 
         function updateLinks(token) {
-            document.getElementById('linkRubro').href = `https://formulariov3.onrender.com/rubro.html?token=${token}`;
-            document.getElementById('linkReporteRubros').href = `https://formulariov3.onrender.com/Reporte.html?token=${token}`;
+            document.getElementById('linkRubro').href = `http://localhost:3001/rubro.html?token=${token}`;
+            document.getElementById('linkReporteRubros').href = `http://localhost:3001/Reporte.html?token=${token}`;
             document.getElementById('linkCalculadora').href = `https://condiciones.onrender.com?token=${token}`;
-            document.getElementById('linkSolped').href = `https://formulariov3.onrender.com/?token=${token}`;
+            document.getElementById('linkSolped').href = `http://localhost:3001/?token=${token}`;
             document.getElementById('linkFormularioCondiciones').href = `https://condiciones.onrender.com/formulario?token=${token}`;
         }
 
