@@ -1,18 +1,3 @@
-/* index.css */
-/* html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; */
-    /* background-color: #003366; */
-/* } */
-
-
 html, body {
     margin: 0;
     padding: 0;
@@ -26,8 +11,9 @@ html, body {
     background-size: cover;
     background-position: center;
     display: flex;
+    flex-direction: row;
     justify-content: start;
-    align-items: center;
+    align-items: start;
     height: 45vh;
     width: 100%;
 }
@@ -36,20 +22,22 @@ html, body {
 .logo-container {
     margin-bottom: 0; 
     display: flex;
-    flex-direction: column; 
+    flex-direction: row;
     justify-content: start;
     align-items: center;
-    margin-top: 180px;
-    margin-left: 60px;
+    margin-top: 160px;
+    margin-left: -80px;
 
 }
 
-
-/* body{
+.bclLogo {
+    margin-bottom: 0; 
     display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+}
+
 .background-container {
     background: #ffffff69; 
     backdrop-filter: blur(10px); 
@@ -62,23 +50,6 @@ html, body {
     height: 43vh; 
     justify-content: center; 
 }
-
-/* @media (max-width: 1050px) {
-    .background-container {
-        height: auto; 
-        padding: 20px; 
-    }
-} */
-
-
-/* .logo-container {
-    margin-bottom: 0; 
-    display: flex;
-    flex-direction: column; 
-    justify-content: start;
-    align-items: center;
-} */
-
 
 
 
@@ -99,7 +70,7 @@ html, body {
     color: white;
     border: none;
     padding: 20px 40px;
-    font-size: 20px;
+    font-size: 1.4375rem;
     cursor: pointer;
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -118,72 +89,6 @@ html, body {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
 }
 
-.text-container {
-    font-family: "Roboto", sans-serif;
-    padding-left: 100px;
-    padding-right: 100px;
-    color: #141414;
-    text-align: justify; 
-    font-size: 16px;
-    font-style: roboto; 
-    font-weight: 450;
-    width: 70%;
-
-}
-
-
-
-/* .logo {
-    margin-top: -90px;
-} */
-
-
-h1 {
-    font-style: century gothic;
-    font-weight: 300;
-    color: #979797;
-    font-size: 60px; 
-    margin-bottom: 5px; 
-    text-align: left; 
-
-}
-
-.text-container > p:first-of-type {
-    font-style: century gothic;
-    color: #979797;
-    font-size: 45px;
-    margin-bottom: 50px; 
-    margin-top: 5px;
-    font-weight: 300;
-
-}
-
-h2 {
-    font-family: "Roboto", sans-serif;
-    color: #00B050;
-    font-size: 23px; 
-    font-weight: bold;
-    margin-top: 50px;
-    text-align: left; 
-}
-p{
-    font-family: "Roboto", sans-serif;
-    color: #979797;
-    font-size: 27px;
-    font-weight: 300;
-    text-align: justify; 
-
-}
-
-.letraNegra {
-    color: #4f4f4f;
-    font-weight: 300;
-}
-
-.letraAzul {
-    color: #062059;
-    font-weight: 400;
-}
 
 .letraAzul2 {
     color: #2764a1;
@@ -196,9 +101,207 @@ p{
     align-items: start;
 }
 
-.bclLogo {
-    position: absolute;
-    top: 20px; /* Ajusta este valor según sea necesario */
-    left: 20px; /* Ajusta este valor según sea necesario */
-    z-index: 10; /* Asegúrate de que esté por encima de otros elementos */
+
+html {
+    font-size: 14px; 
+}
+
+.text-container {
+    font-family: "Roboto", sans-serif;
+    padding-left: 70px;
+    padding-right: 70px;
+    color: #141414;
+    text-align: justify; 
+    font-size: 1rem; /* Equivalente a 16px */
+    font-weight: 450;
+    width: 70%;
+    overflow: hidden; /* Evita que el contenido se desborde */
+    white-space: normal; /* Permite el ajuste de línea */
+    word-wrap: break-word; /* Ajusta las palabras largas */
+}
+
+h1 {
+    font-family: "Century Gothic", sans-serif;
+    font-weight: 300;
+    color: #979797;
+    font-size: 3.75rem; /* Equivalente a 60px */
+    margin-bottom: 0.3125rem; /* Equivalente a 5px */
+    text-align: left; 
+    overflow: hidden; /* Evita que el contenido se desborde */
+    white-space: normal; /* Permite el ajuste de línea */
+    word-wrap: break-word; /* Ajusta las palabras largas */
+}
+
+.text-container > p:first-of-type {
+    font-family: "Century Gothic", sans-serif;
+    color: #979797;
+    font-size: 2.8125rem; /* Equivalente a 45px */
+    margin-bottom: 3.125rem; /* Equivalente a 50px */
+    margin-top: 0.3125rem; /* Equivalente a 5px */
+    font-weight: 300;
+    overflow: hidden; /* Evita que el contenido se desborde */
+    white-space: normal; /* Permite el ajuste de línea */
+    word-wrap: break-word; /* Ajusta las palabras largas */
+}
+
+h2 {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.4375rem; /* Equivalente a 23px */
+    font-weight: bold;
+    margin-top: 3.125rem; /* Equivalente a 50px */
+    text-align: left; 
+    overflow: hidden; /* Evita que el contenido se desborde */
+    white-space: normal; /* Permite el ajuste de línea */
+    word-wrap: break-word; /* Ajusta las palabras largas */
+}
+.link {
+    text-decoration: none;
+    color: #00B050;
+}
+p {
+    font-family: "Roboto", sans-serif;
+    color: #979797;
+    font-size: 1.6875rem; /* Equivalente a 27px */
+    font-weight: 300;
+    text-align: justify; 
+    overflow: hidden; /* Evita que el contenido se desborde */
+    white-space: normal; /* Permite el ajuste de línea */
+    word-wrap: break-word; /* Ajusta las palabras largas */
+}
+
+.letraNegra {
+    color: #4f4f4f;
+    font-weight: 300;
+    overflow: hidden; /* Evita que el contenido se desborde */
+    white-space: normal; /* Permite el ajuste de línea */
+    word-wrap: break-word; /* Ajusta las palabras largas */
+}
+
+.letraAzul {
+    color: #062059;
+    font-weight: 400;
+    overflow: hidden; /* Evita que el contenido se desborde */
+    white-space: normal; /* Permite el ajuste de línea */
+    word-wrap: break-word; /* Ajusta las palabras largas */
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 1400px) {
+    html {
+        font-size: 12px; /* Ajusta el tamaño base */
+    }
+    .text-container {
+        padding-left: 50px;
+        padding-right: 50px;
+}
+}
+
+@media (max-width: 1299px) {
+    .login-btn {
+        font-size: 18px;
+        padding: 20px;
+    }
+
+}
+
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 11px; /* Ajusta el tamaño base */
+    }
+    .text-container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+}
+
+@media (max-width: 1100px) {
+    .login-btn {
+        font-size: 15px;
+    }
+    
+}
+
+@media (max-width: 992px) {
+    html {
+        font-size: 10px; /* Ajusta el tamaño base */
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 9px; /* Ajusta el tamaño base */
+    }
+    .login-btn {
+        font-size: 7px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 9px; /* Ajusta el tamaño base */
+    }
+}
+
+@media (max-width: 400px) {
+    html {
+        font-size: 7px; /* Ajusta el tamaño base */
+    }
+}
+
+
+
+/* Estilos específicos para móviles */
+@media (max-width: 600px) {
+    .background-container {
+        padding: 20px;
+        height: auto;
+    }
+    .login-container {
+        width: 100%;
+        
+    }
+    .logo-container {
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+
+    .fondo{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        height: auto;
+    }
+    .logo {
+        padding-left: 20px;
+        height: 100px;
+        padding-top: 20px;
+        margin-bottom: 25px;
+    }
+    .background-container {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: start;
+    }
+
+    .login-btn {
+        order: 2;
+        font-size: 1.5rem;
+        margin-top: 30px;
+    }
+
+    .recuperar {
+        order: 3;
+    }
+
+    .text-container {
+        padding-left: 30px;
+        padding-right: 30px;
+        width: 100%;
+        order: 1;
+    }
 }
