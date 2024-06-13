@@ -129,10 +129,7 @@ span {
     }
 
   }
-  .bg{
-    background-color: #0E1049;
-    color: white;
-  }
+
   .home, .reportes, .herramientas {
     font-family: Inter, sans-serif;
     border-radius: 10px;
@@ -148,7 +145,10 @@ span {
     color: white;
     cursor: pointer;
   }
-  
+  .bg{
+    background-color: #0E1049;
+    color: white;
+  }
   @media (max-width: 991px) {
     .menu {
       flex-direction: column;
