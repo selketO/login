@@ -1,45 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Principal</title>
-    <link rel="stylesheet" href="menu.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+  <link rel="stylesheet" href="menu.css">
 </head>
 <body>
-    <div class="welcome-message">
-        <h1>Hola <span id="username"></span>, bienvenido a BCL Management</h1>
-    </div>
+  <div class="contenedor">
+    <section class="nav-bar">
+      <img loading="lazy" src="BCL MGM.png" class="BCL_MGM" height="80px" />
+      <div class="bienvenido">
+        <h1>Bienvenido, <span id="username"></span></h1> 
+      </div>
+    </section>
+    <section class="contenedor2">
+      <div class="menu-icon">☰</div>
+      <nav class="menu">
+        <div class="home">Home</div>
+        <div class="reportes">Reportes</div>
+        <div class="herramientas">Herramientas</div>
+      </nav>
 
-    <div class="content-container">
-        <div class="buttons-container">
-            <button class="icon-button" id="reportes-btn">
-                <i class="fas fa-chart-line"></i>
-                <span>Reportes</span>
-            </button>
-            <button class="icon-button" id="herramientas-btn">
-                <i class="fas fa-tools"></i>
-                <span>Herramientas</span>
-            </button>
+
+
+      <div class="container-todo">
+        <div class="container-categoria">
+          <div class="cuadros">
+            <img class="icono" loading="lazy" src="IMG/i+d.png"/>
+          </div>
+          <div class="titulo">I + D</div>
         </div>
+        <div class="container-categoria">
+          <div class="cuadros">
+            <img class="icono" loading="lazy" src="IMG/mkt.png"/>
+          </div>
+          <div class="titulo">MKT</div>
+        </div>
+        <div class="container-categoria">
+          <div class="cuadros">
+            <img class="icono" loading="lazy" src="IMG/ops.png"/>
+          </div>
+          <div class="titulo">OPS</div>
+        </div>
+        <div class="container-categoria">
+          <div class="cuadros">
+            <img class="icono" loading="lazy" src="IMG/rh+do.png"/>
+          </div>
+          <div class="titulo">RH + DO</div>
+        </div>
+        <div class="container-categoria">
+          <div class="cuadros">
+            <img class="icono" loading="lazy" src="IMG/ventas.png"/>
+          </div>
+          <div class="titulo">VENTAS</div>
+        </div>
+        <div class="container-categoria">
+          <div class="cuadros">
+            <img class="icono" loading="lazy" src="IMG/tradeMkt.png"/>
+          </div>
+          <div class="titulo">TRADE MKT</div>
+        </div>
+        <div class="container-categoria">
+          <div class="cuadros">
+            <img class="icono" loading="lazy" src="IMG/finanzas.png"/>
+          </div>
+          <div class="titulo">FINANZAS</div>
+        </div>
+        <div class="container-categoria">
+          <div class="cuadros">
+            <img class="icono" loading="lazy" src="IMG/fiscal.png"/>
+          </div>
+          <div class="titulo">FISCAL</div>
+        </div>
+      </div>
+      
+        </div>
+      </div>
+    </section>
+  </div>
 
-        <nav class="main-menu" id="reportes-menu">
-            <ul>
-                <li><a id="linkRubro" href="#"><img src="img/reasignacion de saldos-Photoroom.png" alt="Rubros"><span>Reasignacion de saldos</span></a></li>
-                <li><a id="linkReporteRubros" href="#"><img src="img/reportegastos-Photoroom.png" alt="Reporte de Rubros"><span>Reporte de gastos</span></a></li>
-            </ul>
-        </nav>
-
-        <nav class="main-menu" id="herramientas-menu">
-            <ul>
-                <li><a id="linkCalculadora" href="#"><img src="img/condiciones_comerciales-Photoroom (3).png" alt="Calculadora"><span>Calculadora de condiciones</span></a></li
-                <li><a id="linkSolped" href="#"><img src="img/solped-Photoroom.png" alt="SOLPED"><span>SOLPED</span></a></li>
-                <li><a id="linkFormularioCondiciones" href="#"><img src="img/descuentosadicionales-Photoroom (1).png" alt="Formulario"><span>Descuentos adicionales</span></a></li>
-            </ul>
-        </nav>
-    </div>
-
+<script src="menu.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const authToken = sessionStorage.getItem("authToken");
