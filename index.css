@@ -43,7 +43,7 @@ html, body {
 .background-container {
     background: #ffffff69; 
     backdrop-filter: blur(10px); 
-    padding: 50px 50px; 
+    padding: 40px 40px; 
     width: auto;
     text-align: center; 
     display: flex;
@@ -105,8 +105,8 @@ html {
 
 .text-container {
     font-family: "Roboto", sans-serif;
-    padding-left: 60px;
-    padding-right: 40px;
+    padding-left: 40px;
+    padding-right: 30px;
     color: #141414;
     text-align: justify; 
     font-size: 1rem; /* Equivalente a 16px */
@@ -121,7 +121,7 @@ h1 {
     font-family: "Century Gothic", sans-serif;
     font-weight: 300;
     color: #979797;
-    font-size: 3.75rem; /* Equivalente a 60px */
+    font-size: 3.58rem; /* Equivalente a 60px */
     margin-bottom: 0.3125rem; /* Equivalente a 5px */
     text-align: left; 
     overflow: hidden; /* Evita que el contenido se desborde */
