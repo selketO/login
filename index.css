@@ -18,7 +18,9 @@ html, body {
     width: 100%;
 }
 
-
+.logo {
+    max-height: 160px; /* Aquí: Cambio para asegurar consistencia */
+}
 .logo-container {
     margin-bottom: 0; 
     display: flex;
@@ -27,7 +29,7 @@ html, body {
     align-items: center;
     margin-top: 160px;
     margin-left: -80px;
-
+    overflow-x: hidden;
 }
 
 .bclLogo {
@@ -51,15 +53,12 @@ html, body {
     justify-content: center; 
 }
 
-
-
 .login-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 50%;
-
 }
 
 .login-btn {
@@ -89,7 +88,6 @@ html, body {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
 }
 
-
 .letraAzul2 {
     color: #2764a1;
 }
@@ -100,7 +98,6 @@ html, body {
     justify-content: start;
     align-items: start;
 }
-
 
 html {
     font-size: 14px; 
@@ -146,6 +143,7 @@ h1 {
 
 h2 {
     font-family: "Roboto", sans-serif;
+    color: #00B050;
     font-size: 1.4375rem; /* Equivalente a 23px */
     font-weight: bold;
     margin-top: 3.125rem; /* Equivalente a 50px */
@@ -154,10 +152,7 @@ h2 {
     white-space: normal; /* Permite el ajuste de línea */
     word-wrap: break-word; /* Ajusta las palabras largas */
 }
-.link {
-    text-decoration: none;
-    color: #00B050;
-}
+
 p {
     font-family: "Roboto", sans-serif;
     color: #979797;
@@ -193,7 +188,10 @@ p {
     .text-container {
         padding-left: 50px;
         padding-right: 50px;
-}
+    }
+    .logo {
+        height: 160px; /* Aquí: Cambio para asegurar consistencia */
+    }
 }
 
 @media (max-width: 1299px) {
@@ -201,11 +199,12 @@ p {
         font-size: 18px;
         padding: 20px;
     }
-
+    .logo {
+        height: 160px; /* Aquí: Cambio para asegurar consistencia */
+    }
 }
 
-
-@media (max-width: 1200px) {
+@media (max-width: 1200px)  {
     html {
         font-size: 11px; /* Ajusta el tamaño base */
     }
@@ -213,35 +212,50 @@ p {
         padding-left: 50px;
         padding-right: 50px;
     }
-
+    .logo {
+        height: 160px; /* Aquí: Cambio para asegurar consistencia */
+    }
 }
 
 @media (max-width: 1100px) {
     .login-btn {
         font-size: 15px;
     }
-    
+    .logo {
+        height: 160px; /* Aquí: Cambio para asegurar consistencia */
+    }
 }
 
 @media (max-width: 992px) {
     html {
         font-size: 10px; /* Ajusta el tamaño base */
     }
+    .logo {
+        height: 140px; /* Aquí: Cambio para asegurar consistencia */
+    }
 }
 
 @media (max-width: 768px) {
     html {
-        font-size: 9px; /* Ajusta el tamaño base */
+        font-size: 7px; /* Ajusta el tamaño base */
     }
     .login-btn {
         font-size: 7px;
         padding: 20px;
     }
+    .logo {
+        height: 100px; /* Aquí: Cambio para asegurar consistencia */
+    }
+
+    .text-container {
+        padding-left: 30px;
+        padding-right: 10px;
+    }
 }
 
 @media (max-width: 576px) {
     html {
-        font-size: 9px; /* Ajusta el tamaño base */
+        font-size: 8px; /* Ajusta el tamaño base */
     }
 }
 
@@ -251,8 +265,25 @@ p {
     }
 }
 
+@media (max-height: 700px) {
+    .logo {
+        height: 120px; /* Aquí: Cambio para asegurar consistencia */
+        padding-left: 20px;
+    
+    }
+    text-container {
+        padding-left: 30px;
+        padding-right: 0px;
+    }
 
-
+    html {
+        font-size: 8.5px; /* Ajusta el tamaño base */
+    }
+    
+    img.bclLogo {
+        height: 80px;
+    }
+}
 /* Estilos específicos para móviles */
 @media (max-width: 600px) {
     .background-container {
@@ -261,15 +292,12 @@ p {
     }
     .login-container {
         width: 100%;
-        
     }
     .logo-container {
         margin-top: 0;
         margin-left: 0;
     }
-
-
-    .fondo{
+    .fondo {
         display: flex;
         flex-direction: column;
         justify-content: start;
@@ -280,28 +308,30 @@ p {
         padding-left: 20px;
         height: 100px;
         padding-top: 20px;
-        margin-bottom: 25px;
+        margin-bottom: 25px; /* Aquí: Ajuste de margen inferior para consistencia */
     }
     .background-container {
         display: flex;
         flex-direction: column-reverse;
         justify-content: start;
     }
-
     .login-btn {
         order: 2;
         font-size: 1.5rem;
         margin-top: 30px;
     }
-
     .recuperar {
         order: 3;
     }
-
     .text-container {
         padding-left: 30px;
         padding-right: 30px;
         width: 100%;
         order: 1;
     }
+}
+
+.link {
+    text-decoration: none;
+    color: #00B050;
 }
