@@ -129,7 +129,10 @@ span {
     }
 
   }
-  
+  .bg{
+    background-color: #0E1049;
+    color: white;
+  }
   .home, .reportes, .herramientas {
     font-family: Inter, sans-serif;
     border-radius: 10px;
@@ -140,7 +143,7 @@ span {
     padding: 5px 20px;
 }
   
-  .home:hover, .reportes:hover, .herramientas:hover {
+.reportes:hover, .herramientas:hover {
     background-color: #0E1049; 
     color: white;
     cursor: pointer;

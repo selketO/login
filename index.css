@@ -105,8 +105,8 @@ html {
 
 .text-container {
     font-family: "Roboto", sans-serif;
-    padding-left: 70px;
-    padding-right: 70px;
+    padding-left: 60px;
+    padding-right: 40px;
     color: #141414;
     text-align: justify; 
     font-size: 1rem; /* Equivalente a 16px */
@@ -187,7 +187,7 @@ p {
     }
     .text-container {
         padding-left: 50px;
-        padding-right: 50px;
+        padding-right: 40px;
     }
     .logo {
         height: 160px; /* Aquí: Cambio para asegurar consistencia */
@@ -210,7 +210,7 @@ p {
     }
     .text-container {
         padding-left: 50px;
-        padding-right: 50px;
+        padding-right: 30px;
     }
     .logo {
         height: 160px; /* Aquí: Cambio para asegurar consistencia */
@@ -330,7 +330,6 @@ p {
         order: 1;
     }
 }
-
 .link {
     text-decoration: none;
     color: #00B050;
