@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="css/Login.css">
+    <script src="https://alcdn.msauth.net/browser/2.13.1/js/msal-browser.js" crossorigin="anonymous" defer></script>
+</head>
+<body>
+    <div class="fondo">
+        <div ><img src="IMG/LOGO BCL V.png" alt="" class="bclLogo" height="100px"></div>
+        <div class="logo-container">
+            <img src="IMG/BCL MGM.png" alt="Logo BCL" class="logo" height="160px">
+        </div>
+
+    </div>
+    <div class="background-container">
+        <div class="login-container">
+        
+        <button onclick="signIn()" class="login-btn">
+            <img src="https://img.icons8.com/?size=100&id=102497&format=png&color=ffffff" alt="Microsoft Icon">
+            Iniciar sesión
+        </button>
+        <div class="recuperar">
+            <h2>¿Recuperar Contraseña?</h2>
+        </div>
+        
+    </div>
+        <div class="text-container">
+            <h1>Bienvenido a <span class="letraNegra">BCL M</span>ana<span class="letraNegra">g</span>e<span class="letraNegra">m</span>ent</h1>
+            <p>Una Solución Web de <span class="letraAzul">Biancore Lab.</span></p>
+            <p><span class="letraNegra">BCL M</span>ana<span class="letraNegra">g</span>e<span class="letraNegra">m</span>ent es una plataforma de <span class="letraAzul2">Inteligencia de Negocios.</span> <br>Aquí podrás encontrar la información más importante de la empresa <br>desde las diferentes perspectivas existentes como son <br><span class="letraAzul2">Ventas, Marketing, Operaciones, Finanzas y Fiscal.</span> 
+            <p>También encontrarás las aplicaciones desarrolladas para los<br> <span class="letraAzul2">procesos clave de la empresa.</span></p>
+        </div>
+       
+    
+</div>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const msalConfig = {
+            auth: {
+                clientId: "8eacfe75-2903-4793-9e1a-36ab8c2414a1",
+                authority: "https://login.microsoftonline.com/016f1fbb-81bd-443c-b692-6792805d21ec",
+                redirectUri: "https://0453-189-203-106-88.ngrok-free.app"
+            }
+        };
+
+        const myMSALObj = new msal.PublicClientApplication(msalConfig);
+        const loginRequest = {
+            scopes: ["User.Read"]
+        };
+
+        window.signIn = function () {
+            myMSALObj.loginPopup(loginRequest).then(handleResponse).catch(function(error) {
+                console.log("Error during login:", error);
+                alert('Login failed, please try again.');
+            });
+        };
+
+        function handleResponse(response) {
+            if (response !== null) {
+                fetch('https://artistic-verdant-flock.glitch.me/generate-token', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        idToken: response.idToken,
+                        userData: {
+                            username: response.account.username,
+                            name: response.account.name
+                        }
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+    sessionStorage.setItem("authToken", data.jwtToken);
+    const userDetails = parseJwt(data.jwtToken);
+    if (userDetails) {
+        sessionStorage.setItem("name", userDetails.name);
+        sessionStorage.setItem("username", userDetails.username);  // Guarda el username también si es necesario
+        window.location.href = 'menu.html';
+    } else {
+        throw new Error("Invalid token data");
+    }
+})
+                .catch(error => {
+                    console.log('Error al procesar el login:', error);
+                    alert('Login failed, please try again.');
+                });
+            } else {
+                console.log("No user data received.");
+            }
+        }
+
+        function parseJwt(token) {
+    try {
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+        return JSON.parse(jsonPayload);
+    } catch (e) {
+        console.error("Error parsing JWT: ", e);
+        return null;
+    }
+}
+
+
+        window.signOut = function () {
+            myMSALObj.logout();
+            localStorage.clear();
+        };
+    });
+
+    
+</script>
+</body>
+</html>

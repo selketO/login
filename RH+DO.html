@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RH + DO</title>
+  <link rel="stylesheet" href="css/apps.css">
+</head>
+<body>
+  <div class="contenedor">
+    <section class="nav-bar">
+      <img loading="lazy" src="IMG/BCL MGM.png" class="BCL_MGM" height="80px" />
+      <div class="bienvenido">
+        <h1>RH + DO</h1> 
+      </div>
+    </section>
+    <div class="vertical-line"></div>
+
+    <section class="contenedor2">
+      <div class="menu-icon">☰</div>
+      <nav class="menu">
+        <button class="home" onclick="window.location.href='Menu.html'">Home</button>
+      </nav>
+      <div class="contenedor-general">
+      <div class="container-todo">
+        <div class="herramientas">Herramientas</div>
+        <!-- <div class="container-categoria">
+          <div class="cuadros">
+            <img class="icono" loading="lazy" src="IMG/solicitudCambioPresupuesto.png" draggable="false"/>
+          </div>
+          <div class="titulo">Solicitud cambio <br> de presupuesto</div>
+        </div>
+        <div class="container-categoria">
+          <div class="cuadros">
+            <img class="icono" loading="lazy" src="IMG/solped.png" draggable="false"/>
+          </div>
+          <div class="titulo">Solped</div>
+        </div> -->
+      </div>
+      <div class="container-todo borde">
+        <div class="reportes"> Reportes</div>
+      <!-- <div class="container-categoria">
+        <div class="cuadros">
+          <img class="icono" loading="lazy" src="IMG/reporteGastos.png" draggable="false"/>
+        </div>
+        <div class="titulo">Reporte de Gastos</div>
+      </div> -->
+        </div>
+      </div>
+      </div>
+    </section>
+  </div>
+  
+  <script src="js/apps.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const authToken = sessionStorage.getItem("authToken");
+        if (!authToken) {
+            redirectToLogin();
+        } else {
+            updateUsernameDisplay();
+            updateLinks(authToken);
+        }
+    });
+
+    function updateUsernameDisplay() {
+const name = sessionStorage.getItem("name");
+if (name) {
+    document.getElementById('username').innerText = name;
+} else {
+    console.error("No name found in sessionStorage");
+    redirectToLogin();
+}
+}
+    function redirectToLogin() {
+        window.location.href = 'index.html';
+    }
+</script>
+</body>
+</html>
