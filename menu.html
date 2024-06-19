@@ -139,12 +139,13 @@
             window.location.href = 'index.html';
         }
         function updateLinks(token) {
-            document.getElementById('linkRubro').href = `https://formulariov3.onrender.com/rubro.html?token=${token}`;
-            document.getElementById('linkReporteRubros').href = `https://formulariov3.onrender.com/Reporte.html?token=${token}`;
-            document.getElementById('linkCalculadora').href = `https://condiciones.onrender.com?token=${token}`;
-            document.getElementById('linkSolped').href = `https://formulariov3.onrender.com/?token=${token}`;
-            document.getElementById('linkFormularioCondiciones').href = `https://condiciones.onrender.com/formulario?token=${token}`;
+            document.getElementById('linkRubro').onclick = function() { window.location.href = `https://formulariov3.onrender.com/rubro.html?token=${token}`;};
+            document.getElementById('linkReporteRubros').onclick = function() { window.location.href = `https://formulariov3.onrender.com/Reporte.html?token=${token}`;};
+            document.getElementById('linkCalculadora').onclick = function() { window.location.href = `https://condiciones.onrender.com?token=${token}`;};
+            document.getElementById('linkSolped').onclick = function() { window.location.href = `https://formulariov3.onrender.com/?token=${token}`;};
+            document.getElementById('linkFormularioCondiciones').onclick = function() { window.location.href = `https://condiciones.onrender.com/formulario?token=${token}`;};
         }
+
     </script>
 </body>
 </html>

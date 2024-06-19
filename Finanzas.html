@@ -19,19 +19,19 @@
     <section class="contenedor2">
       <div class="menu-icon">☰</div>
       <nav class="menu">
-        <button class="home" onclick="window.location.href='Menu.html'">Home</button>
+        <button class="home" onclick="window.history.back();">Home</button>
       </nav>
       <div class="contenedor-general">
       <div class="container-todo">
         <div class="herramientas">Herramientas</div>
-        <div class="container-categoria" id="linkRubro">
-          <div class="cuadros">
+        <div class="container-categoria" >
+          <div class="cuadros" id="linkRubro">
             <img class="icono" loading="lazy" src="IMG/solicitudCambioPresupuesto.png" draggable="false"/>
           </div>
           <div class="titulo">Solicitud cambio <br> de presupuesto</div>
         </div>
-        <div class="container-categoria" id="linkSolped">
-          <div class="cuadros">
+        <div class="container-categoria" >
+          <div class="cuadros" id="linkSolped">
             <img class="icono" loading="lazy" src="IMG/solped.png" draggable="false"/>
           </div>
           <div class="titulo">Solped</div>
@@ -39,8 +39,8 @@
       </div>
       <div class="container-todo borde">
         <div class="reportes"> Reportes</div>
-      <div class="container-categoria"  id="linkReporteRubros">
-        <div class="cuadros">
+      <div class="container-categoria"  >
+        <div class="cuadros" id="linkReporteRubros">
           <img class="icono" loading="lazy" src="IMG/reporteGastos.png" draggable="false"/>
         </div>
         <div class="titulo">Reporte de Gastos</div>
@@ -76,10 +76,10 @@ if (name) {
         window.location.href = 'index.html';
     }
     function updateLinks(token) {
-            document.getElementById('linkRubro').href = `https://formulariov3.onrender.com/rubro.html?token=${token}`;
-            document.getElementById('linkReporteRubros').href = `https://formulariov3.onrender.com/Reporte.html?token=${token}`;
-            document.getElementById('linkSolped').href = `https://formulariov3.onrender.com/?token=${token}`;
-        }
+    document.getElementById('linkRubro').onclick = function() { window.location.href = `https://formulariov3.onrender.com/rubro.html?token=${token}`; };
+    document.getElementById('linkReporteRubros').onclick = function() { window.location.href = `hhttps://formulariov3.onrender.com/Reporte.html?token=${token}`; };
+    document.getElementById('linkSolped').onclick = function() { window.location.href = `https://formulariov3.onrender.com/?token=${token}`; };
+}
 </script>
 </body>
 </html>
