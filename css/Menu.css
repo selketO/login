@@ -23,7 +23,7 @@ span {
   color: #000;
   font-weight: 500;
   padding: 10px 0px 10px;
-  background-image: url(img/FondoOficialLogin.png);
+  background-image: url(/img/FondoOficialLogin.png);
   background-size: cover; /* Hace que la imagen cubra todo el div */
   background-position: center; /* Centra la imagen dentro del div */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
