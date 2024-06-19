@@ -65,20 +65,27 @@
 
     function updateUsernameDisplay() {
 const name = sessionStorage.getItem("name");
-if (name) {
-    document.getElementById('username').innerText = name;
-} else {
-    console.error("No name found in sessionStorage");
-    redirectToLogin();
-}
 }
     function redirectToLogin() {
         window.location.href = 'index.html';
     }
     function updateLinks(token) {
-    document.getElementById('linkRubro').onclick = function() { window.location.href = `https://formulariov3.onrender.com/rubro.html?token=${token}`; };
-    document.getElementById('linkReporteRubros').onclick = function() { window.location.href = `hhttps://formulariov3.onrender.com/Reporte.html?token=${token}`; };
-    document.getElementById('linkSolped').onclick = function() { window.location.href = `https://formulariov3.onrender.com/?token=${token}`; };
+    const links = {
+        linkRubro: `https://formulariov3.onrender.com/rubro.html?token=${token}`,
+        linkReporteRubros: `https://formulariov3.onrender.com/Reporte.html?token=${token}`,
+        linkSolped: `https://formulariov3.onrender.com/?token=${token}`
+    };
+
+    Object.entries(links).forEach(([id, url]) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.addEventListener('click', () => {
+                window.location.href = url;
+            });
+        } else {
+            console.warn(`Element with id "${id}" not found.`);
+        }
+    });
 }
 </script>
 </body>

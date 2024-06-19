@@ -65,12 +65,6 @@
 
     function updateUsernameDisplay() {
 const name = sessionStorage.getItem("name");
-if (name) {
-    document.getElementById('username').innerText = name;
-} else {
-    console.error("No name found in sessionStorage");
-    redirectToLogin();
-}
 }
     function redirectToLogin() {
         window.location.href = 'index.html';

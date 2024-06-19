@@ -60,19 +60,26 @@
 
     function updateUsernameDisplay() {
 const name = sessionStorage.getItem("name");
-if (name) {
-    document.getElementById('username').innerText = name;
-} else {
-    console.error("No name found in sessionStorage");
-    redirectToLogin();
-}
 }
     function redirectToLogin() {
         window.location.href = 'index.html';
     }
     function updateLinks(token) {
-    document.getElementById('linkCalculadora').onclick = function() { window.location.href = `https://condiciones.onrender.com?token=${token}`; };
-    document.getElementById('linkFormularioCondiciones').onclick = function() { window.location.href = `https://condiciones.onrender.com/formulario?token=${token}`; };
+    const links = {
+        linkCalculadora: `https://condiciones.onrender.com?token=${token}`,
+        linkFormularioCondiciones: `https://condiciones.onrender.com/formulario?token=${token}`
+    };
+
+    Object.entries(links).forEach(([id, url]) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.addEventListener('click', () => {
+                window.location.href = url;
+            });
+        } else {
+            console.warn(`Element with id "${id}" not found.`);
+        }
+    });
 }
 </script>
 </body>
