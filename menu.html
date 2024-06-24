@@ -102,6 +102,13 @@
           </div>
           <div class="titulo">Solped</div>
         </div>
+
+        <div class="container-categoria" id="linkFormList">
+          <div class="cuadros">
+            <img class="icono" loading="lazy" src="img/Formularios.png" draggable="false" height="100px"/>
+          </div>
+          <div class="titulo">Formularios solped</div>
+        </div>
         
         <div class="container-categoria" id="linkRubro">
           <div class="cuadros">
@@ -140,6 +147,7 @@
         }
         function updateLinks(token) {
     const links = {
+        linkFormList: `https://formularios-autorizados.vercel.app?token=${token}`,
         linkRubro: `https://formulariov3.onrender.com/rubro.html?token=${token}`,
         linkReporteRubros: `https://formulariov3.onrender.com/Reporte.html?token=${token}`,
         linkCalculadora: `https://condiciones.onrender.com?token=${token}`,
