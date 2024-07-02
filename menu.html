@@ -79,6 +79,12 @@
           </div>
           <div class="titulo">Reporte de Gastos</div>
         </div>
+        <div class="container-categoria"  >
+          <div class="cuadros" id="linkReporteCxC">
+            <img class="icono" loading="lazy" src="img/reporteGastos.png" draggable="false"/>
+          </div>
+          <div class="titulo">Reporte Cuentas x Cobrar</div>
+        </div>
       </div>
       <div id="container-todo3" class="container-todo3" style="display: none;">
         <!-- Herramientas -->
@@ -147,6 +153,7 @@
         }
         function updateLinks(token) {
     const links = {
+        linkReporteCxC: `http://localhost:3000?token=${token}`,
         linkFormList: `https://formularios-autorizados.vercel.app?token=${token}`,
         linkRubro: `https://formulariov3.onrender.com/rubro.html?token=${token}`,
         linkReporteRubros: `https://formulariov3.onrender.com/Reporte.html?token=${token}`,

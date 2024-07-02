@@ -36,6 +36,12 @@
           </div>
           <div class="titulo">Solped</div>
         </div>
+        <div class="container-categoria" id="linkFormList">
+          <div class="cuadros">
+            <img class="icono" loading="lazy" src="img/Formularios.png" draggable="false" height="100px"/>
+          </div>
+          <div class="titulo">Formularios solped</div>
+        </div>
       </div>
       <div class="container-todo borde">
         <div class="reportes"> Reportes</div>
@@ -44,6 +50,12 @@
           <img class="icono" loading="lazy" src="img/reporteGastos.png" draggable="false"/>
         </div>
         <div class="titulo">Reporte de Gastos</div>
+      </div>
+      <div class="container-categoria"  >
+        <div class="cuadros" id="linkReporteCxC">
+          <img class="icono" loading="lazy" src="img/reporteGastos.png" draggable="false"/>
+        </div>
+        <div class="titulo">Reporte Cuentas x Cobrar</div>
       </div>
         </div>
       </div>
@@ -71,6 +83,8 @@ const name = sessionStorage.getItem("name");
     }
     function updateLinks(token) {
     const links = {
+      linkFormList: `https://formularios-autorizados.vercel.app?token=${token}`,
+      linkReporteCxC: `http://localhost:3000?token=${token}`,
         linkRubro: `https://formulariov3.onrender.com/rubro.html?token=${token}`,
         linkReporteRubros: `https://formulariov3.onrender.com/Reporte.html?token=${token}`,
         linkSolped: `https://formulariov3.onrender.com/?token=${token}`
